@@ -35,8 +35,14 @@ RUN pip3 install --upgrade pip \
   && pip3 install jupyter \
   && pip3 install ptpython \
   && pip3 install colormath \
-  && pip3 install scikit-image
+  && pip3 install scikit-image \
+  && pip3 install jupyter_contrib_nbextensions \
+  && jupyter contrib nbextension install \
+  && pip3 install jupyter_nbextensions_configurator \                  
+  && pip3 install jupyterthemes 
+#  && jt -t grade3 -T
   
+
 
 WORKDIR /
 RUN wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip \
